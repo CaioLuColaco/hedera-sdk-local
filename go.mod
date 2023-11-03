@@ -1,4 +1,4 @@
-module github.com/hashgraph/hedera-sdk-go/v2
+module github.com/CaioLuColaco/hedera-sdk-local
 
 go 1.16
 
