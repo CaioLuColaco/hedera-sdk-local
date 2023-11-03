@@ -21,7 +21,7 @@ available in the [hashgraph/hedera-protobuf] repository.
 ## Install
 
 ```sh
-$ go get github.com/hashgraph/hedera-sdk-go/v2
+$ go get github.com/CaioLuColaco/hedera-sdk-local
 ```
 
 #### Note
