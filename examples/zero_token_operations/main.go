@@ -3,8 +3,8 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/hashgraph/hedera-sdk-go/v2"
-	"github.com/hashgraph/hedera-sdk-go/v2/examples/contract_helper"
+	"github.com/CaioLuColaco/hedera-sdk-local"
+	"github.com/CaioLuColaco/hedera-sdk-local/examples/contract_helper"
 	"os"
 )
 
@@ -93,7 +93,7 @@ func main() {
 
 	helper := contract_helper.NewContractHelper([]byte(contract.Bytecode), *params, client)
 	helper.SetPayableAmountForStep(0, hedera.NewHbar(20)).AddSignerForStep(1, alicePrivateKey)
-	
+
 	keyList := hedera.KeyListWithThreshold(1).Add(myPrivateKey.PublicKey()).Add(helper.ContractID)
 	tx, err := hedera.NewAccountUpdateTransaction().SetAccountID(myAccountId).SetKey(keyList).Sign(myPrivateKey).Execute(client)
 	if err != nil {

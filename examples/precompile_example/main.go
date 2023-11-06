@@ -7,8 +7,8 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/hashgraph/hedera-sdk-go/v2"
-	"github.com/hashgraph/hedera-sdk-go/v2/examples/contract_helper"
+	"github.com/CaioLuColaco/hedera-sdk-local"
+	"github.com/CaioLuColaco/hedera-sdk-local/examples/contract_helper"
 )
 
 //go:embed PrecompileExample.json
@@ -182,7 +182,7 @@ func main() {
 	// step 14 transfers some NFTs to Alice
 	// step 15 approves an NFT allowance with operator as the owner and Alice as the spender
 	// step 16 burn some NFTs
-	
+
 	_, err = contractHelper.
 		ExecuteSteps( /* from step */ 0 /* to step */, 16, client)
 	if err != nil {

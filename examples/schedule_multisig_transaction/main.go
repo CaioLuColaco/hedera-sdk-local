@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/hashgraph/hedera-sdk-go/v2"
+	"github.com/CaioLuColaco/hedera-sdk-local"
 )
 
 func main() {
@@ -191,7 +191,7 @@ func main() {
 	if !info.ExecutedAt.IsZero() {
 		println("Singing success, signed at: ", info.ExecutedAt.String())
 		println("Signatories: ", info.Signatories.String())
-	}else{
+	} else {
 		panic("Signing failed")
 	}
 }

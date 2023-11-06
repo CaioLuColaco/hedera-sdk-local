@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/hashgraph/hedera-sdk-go/v2"
+	"github.com/CaioLuColaco/hedera-sdk-local"
 	"github.com/pkg/errors"
 )
 

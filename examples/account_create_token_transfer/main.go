@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/hashgraph/hedera-sdk-go/v2"
+	"github.com/CaioLuColaco/hedera-sdk-local"
 )
 
 func main() {
@@ -27,7 +27,7 @@ func main() {
 	operatorKey, err := hedera.PrivateKeyFromString(os.Getenv("OPERATOR_KEY"))
 	if err != nil {
 		panic(fmt.Sprintf("%v : error converting string to PrivateKey", err))
-	} 
+	}
 
 	// Setting the client operator ID and key
 	client.SetOperator(operatorAccountID, operatorKey)

@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/hashgraph/hedera-sdk-go/v2"
+	"github.com/CaioLuColaco/hedera-sdk-local"
 )
 
 type contract struct {

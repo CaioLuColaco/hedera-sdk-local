@@ -1,4 +1,4 @@
-//go:build all || unit
+//go: build all || unit
 // +build all unit
 
 package hedera

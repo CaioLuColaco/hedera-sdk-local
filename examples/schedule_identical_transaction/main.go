@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/hashgraph/hedera-sdk-go/v2"
+	"github.com/CaioLuColaco/hedera-sdk-local"
 )
 
 func main() {
@@ -159,7 +159,7 @@ func main() {
 		}
 
 		if scheduleID.String() != receipt.ScheduleID.String() {
-			panic("invalid generated schedule id, expected " + scheduleID.String() + ", got "+ receipt.ScheduleID.String())
+			panic("invalid generated schedule id, expected " + scheduleID.String() + ", got " + receipt.ScheduleID.String())
 		}
 
 		// If the status return by the receipt is related to already created, execute a schedule sign transaction
@@ -195,7 +195,7 @@ func main() {
 	if !info.ExecutedAt.IsZero() {
 		println("Signing success, signed at: ", info.ExecutedAt.String())
 		println("Signatories: ", info.Signatories.String())
-	}else{
+	} else {
 		panic("Signing failed")
 	}
 }
