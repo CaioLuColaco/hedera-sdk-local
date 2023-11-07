@@ -24,7 +24,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/hashgraph/hedera-protobufs-go/services"
+	"github.com/CaioLuColaco/hedera-protobufs-local/services"
 )
 
 // Delete a file or smart contract - can only be done with a Hedera admin.

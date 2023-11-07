@@ -24,7 +24,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/hashgraph/hedera-protobufs-go/services"
+	"github.com/CaioLuColaco/hedera-protobufs-local/services"
 )
 
 // TokenAssociateTransaction Associates the provided account with the provided tokens. Must be signed by the provided Account's key.

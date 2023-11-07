@@ -24,7 +24,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/hashgraph/hedera-protobufs-go/services"
+	"github.com/CaioLuColaco/hedera-protobufs-local/services"
 )
 
 // NetworkVersionInfoQuery is the query to be executed that would return the current version of the network's protobuf and services.

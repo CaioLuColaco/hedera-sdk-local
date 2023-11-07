@@ -24,7 +24,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/hashgraph/hedera-protobufs-go/services"
+	"github.com/CaioLuColaco/hedera-protobufs-local/services"
 )
 
 // FileInfoQuery is a query which can be used to get all of the information about a file, except for its contents.

@@ -24,7 +24,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/hashgraph/hedera-protobufs-go/services"
+	"github.com/CaioLuColaco/hedera-protobufs-local/services"
 )
 
 // TopicInfo is the Query for retrieving information about a topic stored on the Hedera network.

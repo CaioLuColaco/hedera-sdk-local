@@ -27,7 +27,7 @@ import (
 	"encoding/asn1"
 	"encoding/hex"
 
-	"github.com/hashgraph/hedera-protobufs-go/services"
+	"github.com/CaioLuColaco/hedera-protobufs-local/services"
 	"github.com/pkg/errors"
 )
 

@@ -26,9 +26,9 @@ import (
 	"math/big"
 	"strings"
 
+	"github.com/CaioLuColaco/hedera-protobufs-local/services"
 	"github.com/ethereum/go-ethereum/accounts/abi"
 	"github.com/ethereum/go-ethereum/common/math"
-	"github.com/hashgraph/hedera-protobufs-go/services"
 	protobuf "google.golang.org/protobuf/proto"
 	"google.golang.org/protobuf/types/known/wrapperspb"
 )

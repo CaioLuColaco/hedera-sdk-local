@@ -29,9 +29,9 @@ import (
 	"math/big"
 	"strings"
 
+	"github.com/CaioLuColaco/hedera-protobufs-local/services"
 	"github.com/btcsuite/btcd/btcec/v2"
 	"github.com/ethereum/go-ethereum/crypto"
-	"github.com/hashgraph/hedera-protobufs-go/services"
 	"github.com/pkg/errors"
 )
 

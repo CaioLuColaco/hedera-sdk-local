@@ -33,7 +33,7 @@ import (
 	"io"
 	"strings"
 
-	"github.com/hashgraph/hedera-protobufs-go/services"
+	"github.com/CaioLuColaco/hedera-protobufs-local/services"
 	"github.com/pkg/errors"
 	"github.com/youmark/pkcs8"
 )

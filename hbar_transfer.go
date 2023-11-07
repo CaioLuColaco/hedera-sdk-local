@@ -20,7 +20,7 @@ package hedera
  *
  */
 
-import "github.com/hashgraph/hedera-protobufs-go/services"
+import "github.com/CaioLuColaco/hedera-protobufs-local/services"
 
 type _HbarTransfer struct {
 	accountID  *AccountID

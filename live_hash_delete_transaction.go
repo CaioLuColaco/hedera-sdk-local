@@ -24,7 +24,7 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/hashgraph/hedera-protobufs-go/services"
+	"github.com/CaioLuColaco/hedera-protobufs-local/services"
 
 	"time"
 )

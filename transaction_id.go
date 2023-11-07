@@ -30,7 +30,7 @@ import (
 	"github.com/pkg/errors"
 	protobuf "google.golang.org/protobuf/proto"
 
-	"github.com/hashgraph/hedera-protobufs-go/services"
+	"github.com/CaioLuColaco/hedera-protobufs-local/services"
 )
 
 // TransactionID is the id used to identify a Transaction on the Hedera _Network. It consists of an AccountID and a

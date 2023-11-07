@@ -33,8 +33,8 @@ import (
 	"io"
 	"strings"
 
+	"github.com/CaioLuColaco/hedera-protobufs-local/services"
 	"github.com/ethereum/go-ethereum/crypto"
-	"github.com/hashgraph/hedera-protobufs-go/services"
 	"github.com/pkg/errors"
 )
 

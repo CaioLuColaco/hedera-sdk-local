@@ -29,8 +29,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/hashgraph/hedera-protobufs-go/sdk"
-	"github.com/hashgraph/hedera-protobufs-go/services"
+	"github.com/CaioLuColaco/hedera-protobufs-local/sdk"
+	"github.com/CaioLuColaco/hedera-protobufs-local/services"
 	protobuf "google.golang.org/protobuf/proto"
 
 	"github.com/stretchr/testify/assert"

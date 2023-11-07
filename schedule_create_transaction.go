@@ -25,7 +25,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/hashgraph/hedera-protobufs-go/services"
+	"github.com/CaioLuColaco/hedera-protobufs-local/services"
 )
 
 // ScheduleCreateTransaction Creates a new schedule entity (or simply, schedule) in the network's action queue.

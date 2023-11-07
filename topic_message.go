@@ -23,7 +23,7 @@ package hedera
 import (
 	"time"
 
-	"github.com/hashgraph/hedera-protobufs-go/mirror"
+	"github.com/CaioLuColaco/hedera-protobufs-local/mirror"
 )
 
 // TopicMessage is a message from a topic}
