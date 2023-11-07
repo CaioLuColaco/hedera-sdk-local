@@ -41,7 +41,7 @@ type ContractInfo struct {
 	LedgerID                      LedgerID
 	AutoRenewAccountID            *AccountID
 	MaxAutomaticTokenAssociations int32
-	StakingInfo                   *StakingInfo
+	StakingInfoHedera                   *StakingInfoHedera
 }
 
 func _ContractInfoFromProtobuf(contractInfo *services.ContractGetInfoResponse_ContractInfo) (ContractInfo, error) {
@@ -73,9 +73,9 @@ func _ContractInfoFromProtobuf(contractInfo *services.ContractGetInfoResponse_Co
 		autoRenewAccountID = _AccountIDFromProtobuf(contractInfo.AutoRenewAccountId)
 	}
 
-	var stakingInfo StakingInfo
-	if contractInfo.StakingInfo != nil {
-		stakingInfo = _StakingInfoFromProtobuf(contractInfo.StakingInfo)
+	var StakingInfoHedera StakingInfoHedera
+	if contractInfo.StakingInfoHedera != nil {
+		StakingInfoHedera = _StakingInfoHederaFromProtobuf(contractInfo.StakingInfoHedera)
 	}
 
 	return ContractInfo{
@@ -91,7 +91,7 @@ func _ContractInfoFromProtobuf(contractInfo *services.ContractGetInfoResponse_Co
 		LedgerID:                      LedgerID{contractInfo.LedgerId},
 		AutoRenewAccountID:            autoRenewAccountID,
 		MaxAutomaticTokenAssociations: contractInfo.MaxAutomaticTokenAssociations,
-		StakingInfo:                   &stakingInfo,
+		StakingInfoHedera:                   &StakingInfoHedera,
 	}, nil
 }
 
@@ -113,8 +113,8 @@ func (contractInfo *ContractInfo) _ToProtobuf() *services.ContractGetInfoRespons
 		body.AutoRenewAccountId = contractInfo.AutoRenewAccountID._ToProtobuf()
 	}
 
-	if contractInfo.StakingInfo != nil {
-		body.StakingInfo = contractInfo.StakingInfo._ToProtobuf()
+	if contractInfo.StakingInfoHedera != nil {
+		body.StakingInfoHedera = contractInfo.StakingInfoHedera._ToProtobuf()
 	}
 
 	return body

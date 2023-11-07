@@ -27,7 +27,7 @@ import (
 	protobuf "google.golang.org/protobuf/proto"
 )
 
-type StakingInfo struct {
+type StakingInfoHedera struct {
 	DeclineStakingReward bool
 	StakePeriodStart     *time.Time
 	PendingReward        int64
@@ -37,13 +37,13 @@ type StakingInfo struct {
 	StakedNodeID         *int64
 }
 
-func _StakingInfoFromProtobuf(pb *services.StakingInfo) StakingInfo {
+func _StakingInfoHederaFromProtobuf(pb *services.StakingInfoHedera) StakingInfoHedera {
 	var start time.Time
 	if pb.StakePeriodStart != nil {
 		start = _TimeFromProtobuf(pb.StakePeriodStart)
 	}
 
-	body := StakingInfo{
+	body := StakingInfoHedera{
 		DeclineStakingReward: pb.DeclineReward,
 		StakePeriodStart:     &start,
 		PendingReward:        pb.PendingReward,
@@ -52,46 +52,46 @@ func _StakingInfoFromProtobuf(pb *services.StakingInfo) StakingInfo {
 	}
 
 	switch temp := pb.StakedId.(type) {
-	case *services.StakingInfo_StakedAccountId:
+	case *services.StakingInfoHedera_StakedAccountId:
 		body.StakedAccountID = _AccountIDFromProtobuf(temp.StakedAccountId)
-	case *services.StakingInfo_StakedNodeId:
+	case *services.StakingInfoHedera_StakedNodeId:
 		body.StakedNodeID = &temp.StakedNodeId
 	}
 
 	return body
 }
 
-func (stakingInfo *StakingInfo) _ToProtobuf() *services.StakingInfo { // nolint
+func (StakingInfoHedera *StakingInfoHedera) _ToProtobuf() *services.StakingInfoHedera { // nolint
 	var pendingReward int64
 
-	if stakingInfo.PendingReward > 0 {
-		pendingReward = stakingInfo.PendingReward
+	if StakingInfoHedera.PendingReward > 0 {
+		pendingReward = StakingInfoHedera.PendingReward
 	} else {
-		pendingReward = stakingInfo.PendingHbarReward.AsTinybar()
+		pendingReward = StakingInfoHedera.PendingHbarReward.AsTinybar()
 	}
 
-	body := services.StakingInfo{
-		DeclineReward: stakingInfo.DeclineStakingReward,
+	body := services.StakingInfoHedera{
+		DeclineReward: StakingInfoHedera.DeclineStakingReward,
 		PendingReward: pendingReward,
-		StakedToMe:    stakingInfo.StakedToMe.AsTinybar(),
+		StakedToMe:    StakingInfoHedera.StakedToMe.AsTinybar(),
 	}
 
-	if stakingInfo.StakePeriodStart != nil {
-		body.StakePeriodStart = _TimeToProtobuf(*stakingInfo.StakePeriodStart)
+	if StakingInfoHedera.StakePeriodStart != nil {
+		body.StakePeriodStart = _TimeToProtobuf(*StakingInfoHedera.StakePeriodStart)
 	}
 
-	if stakingInfo.StakedAccountID != nil {
-		body.StakedId = &services.StakingInfo_StakedAccountId{StakedAccountId: stakingInfo.StakedAccountID._ToProtobuf()}
-	} else if stakingInfo.StakedNodeID != nil {
-		body.StakedId = &services.StakingInfo_StakedNodeId{StakedNodeId: *stakingInfo.StakedNodeID}
+	if StakingInfoHedera.StakedAccountID != nil {
+		body.StakedId = &services.StakingInfoHedera_StakedAccountId{StakedAccountId: StakingInfoHedera.StakedAccountID._ToProtobuf()}
+	} else if StakingInfoHedera.StakedNodeID != nil {
+		body.StakedId = &services.StakingInfoHedera_StakedNodeId{StakedNodeId: *StakingInfoHedera.StakedNodeID}
 	}
 
 	return &body
 }
 
-// ToBytes returns the byte representation of the StakingInfo
-func (stakingInfo *StakingInfo) ToBytes() []byte {
-	data, err := protobuf.Marshal(stakingInfo._ToProtobuf())
+// ToBytes returns the byte representation of the StakingInfoHedera
+func (StakingInfoHedera *StakingInfoHedera) ToBytes() []byte {
+	data, err := protobuf.Marshal(StakingInfoHedera._ToProtobuf())
 	if err != nil {
 		return make([]byte, 0)
 	}
@@ -99,18 +99,18 @@ func (stakingInfo *StakingInfo) ToBytes() []byte {
 	return data
 }
 
-// StakingInfoFromBytes returns a StakingInfo object from a raw byte array
-func StakingInfoFromBytes(data []byte) (StakingInfo, error) {
+// StakingInfoHederaFromBytes returns a StakingInfoHedera object from a raw byte array
+func StakingInfoHederaFromBytes(data []byte) (StakingInfoHedera, error) {
 	if data == nil {
-		return StakingInfo{}, errByteArrayNull
+		return StakingInfoHedera{}, errByteArrayNull
 	}
-	pb := services.StakingInfo{}
+	pb := services.StakingInfoHedera{}
 	err := protobuf.Unmarshal(data, &pb)
 	if err != nil {
-		return StakingInfo{}, err
+		return StakingInfoHedera{}, err
 	}
 
-	info := _StakingInfoFromProtobuf(&pb)
+	info := _StakingInfoHederaFromProtobuf(&pb)
 
 	return info, nil
 }

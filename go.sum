@@ -1,5 +1,5 @@
-github.com/CaioLuColaco/hedera-protobufs-local v1.0.0-beta.11072 h1:P37Oj/A5D57mjTvEIbc9FYGwZw8+w+QPQ5cRQ88y0/U=
-github.com/CaioLuColaco/hedera-protobufs-local v1.0.0-beta.11072/go.mod h1:lqbhqqVzY38DJ5S81B34suDCvNMEFlcj2ytNYHM7Q8U=
+github.com/CaioLuColaco/hedera-protobufs-local v1.0.0-beta.1108 h1:/og3VF5JjTS2PsYiPhj5SIuSSoLNIXmcQShpw1YwM1M=
+github.com/CaioLuColaco/hedera-protobufs-local v1.0.0-beta.1108/go.mod h1:lqbhqqVzY38DJ5S81B34suDCvNMEFlcj2ytNYHM7Q8U=
 github.com/DataDog/zstd v1.4.5 h1:EndNeuB0l9syBZhut0wns3gV1hL8zX8LIu6ZiVHWLIQ=
 github.com/StackExchange/wmi v1.2.1 h1:VIkavFPXSjcnS+O8yTq7NI32k0R5Aj+v39y29VYDOSA=
 github.com/VictoriaMetrics/fastcache v1.12.1 h1:i0mICQuojGDL3KblA7wUNlY5lOK6a4bwt3uRKnkZU40=

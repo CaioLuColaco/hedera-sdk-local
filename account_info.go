@@ -57,7 +57,7 @@ type AccountInfo struct {
 	// Deprecated
 	TokenAllowances []TokenAllowance
 	EthereumNonce   int64
-	StakingInfo     *StakingInfo
+	StakingInfoHedera     *StakingInfoHedera
 }
 
 func _AccountInfoFromProtobuf(pb *services.CryptoGetInfoResponse_AccountInfo) (AccountInfo, error) {
@@ -97,9 +97,9 @@ func _AccountInfoFromProtobuf(pb *services.CryptoGetInfoResponse_AccountInfo) (A
 		}
 	}
 
-	var stakingInfo StakingInfo
-	if pb.StakingInfo != nil {
-		stakingInfo = _StakingInfoFromProtobuf(pb.StakingInfo)
+	var StakingInfoHedera StakingInfoHedera
+	if pb.StakingInfoHedera != nil {
+		StakingInfoHedera = _StakingInfoHederaFromProtobuf(pb.StakingInfoHedera)
 	}
 
 	return AccountInfo{
@@ -121,7 +121,7 @@ func _AccountInfoFromProtobuf(pb *services.CryptoGetInfoResponse_AccountInfo) (A
 		AliasKey:                       alias,
 		LedgerID:                       LedgerID{pb.LedgerId},
 		EthereumNonce:                  pb.EthereumNonce,
-		StakingInfo:                    &stakingInfo,
+		StakingInfoHedera:                    &StakingInfoHedera,
 	}, nil
 }
 
@@ -159,8 +159,8 @@ func (info AccountInfo) _ToProtobuf() *services.CryptoGetInfoResponse_AccountInf
 		EthereumNonce:                  info.EthereumNonce,
 	}
 
-	if info.StakingInfo != nil {
-		body.StakingInfo = info.StakingInfo._ToProtobuf()
+	if info.StakingInfoHedera != nil {
+		body.StakingInfoHedera = info.StakingInfoHedera._ToProtobuf()
 	}
 
 	return body
