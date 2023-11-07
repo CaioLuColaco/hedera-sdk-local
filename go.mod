@@ -3,7 +3,7 @@ module github.com/CaioLuColaco/hedera-sdk-local
 go 1.20
 
 require (
-	github.com/CaioLuColaco/hedera-protobufs-local v1.0.0-beta.1108
+	github.com/CaioLuColaco/hedera-protobufs-local v1.0.0-beta.11082
 	github.com/btcsuite/btcd/btcec/v2 v2.3.2
 	github.com/cenkalti/backoff/v4 v4.2.1
 	github.com/ethereum/go-ethereum v1.13.4
