@@ -78,7 +78,7 @@ func main() {
 		panic(fmt.Sprintf("%v : error retrieving account info", err))
 	}
 
-	println("Staked account id:", info.StakingInfo.StakedAccountID.String())
+	println("Staked account id:", info.StakingInfoHedera.StakedAccountID.String())
 
 	freezeUpdate, err := hedera.NewAccountUpdateTransaction().
 		SetNodeAccountIDs([]hedera.AccountID{transactionResponse.NodeID}).
@@ -109,5 +109,5 @@ func main() {
 		panic(fmt.Sprintf("%v : error retrieving account info", err))
 	}
 
-	println("Staked node id after update:", *info.StakingInfo.StakedNodeID)
+	println("Staked node id after update:", *info.StakingInfoHedera.StakedNodeID)
 }

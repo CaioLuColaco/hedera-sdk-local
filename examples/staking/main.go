@@ -78,5 +78,5 @@ func main() {
 		panic(fmt.Sprintf("%v : error retrieving account info", err))
 	}
 
-	println("Staked Node Account ID:", info.StakingInfo.StakedAccountID.String())
+	println("Staked Node Account ID:", info.StakingInfoHedera.StakedAccountID.String())
 }
